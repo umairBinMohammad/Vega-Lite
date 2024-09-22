@@ -13,7 +13,7 @@
     "layer": [
       {
         "data": {
-          "url": "js/aus_states_provinces.topojson",
+          "url": "js/aus_states_provinces_graticules.topojson",
           "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
         },
         "mark": {
