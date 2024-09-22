@@ -59,8 +59,8 @@
       {
         "mark": {"type": "rule", "color": "black"},
         "encoding": {
-          "x": {"field": "longitude", "type": "quantitative"},
-          "y": {"field": "latitude", "type": "quantitative"}
+          "x": {"field": "longitude", "type": "quantitative", "axis": null},
+          "y": {"field": "latitude", "type": "quantitative", "axis": null}
         }
       }
     ],
