@@ -77,6 +77,12 @@
       },
       "mark": "area",
       "height": 100,
+      "title": {
+        "text": "Use this Area chart to filter the map based on time period",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "anchor": "middle"
+      },
       "encoding": {
         "x": {
           "field": "acq_date",
