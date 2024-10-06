@@ -53,8 +53,6 @@
               "scale": {"scheme": "greens"}
             },
             "tooltip": [
-              {"field": "latitude", "type": "quantitative", "title": "Latitude"},
-              {"field": "longitude", "type": "quantitative", "title": "Longitude"},
               {"field": "brightness", "type": "quantitative", "title": "Brightness"},
               {"field": "confidence", "type": "quantitative", "title": "Confidence"},
               {"field": "acq_date", "type": "temporal", "title": "Acquisition Date"},
