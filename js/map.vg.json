@@ -1,80 +1,124 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 450,
-    "title": {
-      "text": "Bushfires in Australia (2000)",
-      "subtitle": "Visualizing fire occurrences based on brightness and confidence",
-      "fontSize": 16
-    },
-    "projection": {
-      "type": "mercator"
-    },
-    "layer": [
-      {
-        "data": {
-          "url": "js/aus_states_provinces_graticules.topojson",
-          "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
-        },
-        "mark": {
-          "type": "geoshape",
-          "fill": "lightgray",
-          "stroke": "white"
-        }
-      },
-      {
-        "data": {
-          "url": "data/2000bushfires.csv"
-        },
-        "mark": {
-          "type": "circle",
-          "tooltip": {"content": "data"}
-        },
-        "encoding": {
-          "longitude": {"field": "longitude", "type": "quantitative"},
-          "latitude": {"field": "latitude", "type": "quantitative"},
-          "size": {
-            "field": "brightness",
-            "type": "quantitative",
-            "title": "Brightness",
-            "scale": {"type": "log", "range": [10, 100]}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": {
+    "text": "Bushfires in Australia (2000)",
+    "subtitle": "Visualizing fire occurrences based on brightness and confidence",
+    "fontSize": 16
+  },
+  "projection": {
+    "type": "mercator"
+  },
+  "vconcat": [
+    {
+      "width": 1200,
+      "height": 400,
+      "layer": [
+        {
+          "data": {
+            "url": "js/aus_states_provinces_graticules.topojson",
+            "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
           },
-          "color": {
-            "field": "confidence",
-            "type": "quantitative",
-            "title": "Confidence",
-            "scale": {"scheme": "redyellowgreen"}
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgray",
+            "stroke": "white"
+          }
+        },
+        {
+          "data": {
+            "url": "data/2000bushfires.csv"
           },
-          "tooltip": [
-            {"field": "latitude", "type": "quantitative", "title": "Latitude"},
-            {"field": "longitude", "type": "quantitative", "title": "Longitude"},
-            {"field": "brightness", "type": "quantitative", "title": "Brightness"},
-            {"field": "confidence", "type": "quantitative", "title": "Confidence"},
-            {"field": "acq_date", "type": "temporal", "title": "Acquisition Date"},
-            {"field": "satellite", "type": "nominal", "title": "Satellite"},
-            {"field": "instrument", "type": "nominal", "title": "Instrument"}
-          ]
+          "transform": [
+            {"filter": {"selection": "brush"}}
+          ],
+          "mark": {
+            "type": "circle",
+            "tooltip": {"content": "data"}
+          },
+          "encoding": {
+            "longitude": {"field": "longitude", "type": "quantitative"},
+            "latitude": {"field": "latitude", "type": "quantitative"},
+            "size": {
+              "field": "brightness",
+              "type": "quantitative",
+              "title": "Brightness",
+              "scale": {"type": "log", "range": [10, 100]}
+            },
+            "color": {
+              "field": "confidence",
+              "type": "quantitative",
+              "title": "Confidence",
+              "scale": {"scheme": "greens"}
+            },
+            "tooltip": [
+              {"field": "latitude", "type": "quantitative", "title": "Latitude"},
+              {"field": "longitude", "type": "quantitative", "title": "Longitude"},
+              {"field": "brightness", "type": "quantitative", "title": "Brightness"},
+              {"field": "confidence", "type": "quantitative", "title": "Confidence"},
+              {"field": "acq_date", "type": "temporal", "title": "Acquisition Date"},
+              {"field": "satellite", "type": "nominal", "title": "Satellite"},
+              {"field": "instrument", "type": "nominal", "title": "Instrument"}
+            ]
+          }
+        },
+        {
+          "mark": {"type": "rule", "color": "black"},
+          "encoding": {
+            "x": {"field": "longitude", "type": "quantitative", "axis": null},
+            "y": {"field": "latitude", "type": "quantitative", "axis": null}
+          }
         }
+      ]
+    },
+    {
+      "width": 1200,
+      "data": {
+        "url": "data/2000bushfires.csv"
       },
-      {
-        "mark": {"type": "rule", "color": "black"},
-        "encoding": {
-          "x": {"field": "longitude", "type": "quantitative", "axis": null},
-          "y": {"field": "latitude", "type": "quantitative", "axis": null}
+      "mark": "area",
+      "height": 100,
+      "encoding": {
+        "x": {
+          "field": "acq_date",
+          "type": "temporal",
+          "title": "Acquisition Date"
+        },
+        "y": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "Number of Bushfires",
+          "scale": {"domain": [0, 1500]}
+        },
+        "color": {
+          "value": "green"
+        },
+        "opacity": {
+          "value": 0.6  
+        },
+        "tooltip": [
+          {"field": "acq_date", "type": "temporal", "title": "Acquisition Date"}
+        ]
+      },
+      "selection": {
+        "brush": {
+          "type": "interval",
+          "encodings": ["x"]
         }
-      }
-    ],
-    "config": {
-      "legend": {
-        "titleFontSize": 12,
-        "labelFontSize": 10,
-        "labelColor": "black"
-      },
-      "title": {
-        "fontSize": 18,
-        "anchor": "start",
-        "fontWeight": "bold"
       }
     }
+  ],
+  "config": {
+    "legend": {
+      "titleFontSize": 12,
+      "labelFontSize": 10,
+      "labelColor": "black"
+    },
+    "title": {
+      "fontSize": 18,
+      "anchor": "start",
+      "fontWeight": "bold"
+    }
   }
-  
+}
