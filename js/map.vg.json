@@ -12,7 +12,7 @@
   },
   "vconcat": [
     {
-      "width": 1000,
+      "width": 600,
       "height": 400,
       "layer": [
         {
@@ -71,7 +71,7 @@
       ]
     },
     {
-      "width": 1000,
+      "width": 600,
       "data": {
         "url": "data/2000bushfires.csv"
       },
