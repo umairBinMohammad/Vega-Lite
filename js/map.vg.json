@@ -3,7 +3,7 @@
   "width": 800,
   "height": 450,
   "title": {
-    "text": "Bushfires in Australia (2000)",
+    "text": "Bushfires in Australia (2009)",
     "subtitle": "Visualizing fire occurrences based on brightness and confidence",
     "fontSize": 16
   },
@@ -93,7 +93,7 @@
           "aggregate": "count",
           "type": "quantitative",
           "title": "Number of Bushfires",
-          "scale": {"domain": [0, 1500]}
+          "scale": {"domain": [0, 5000]}
         },
         "color": {
           "value": "green"
