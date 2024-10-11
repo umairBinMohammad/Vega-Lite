@@ -15,8 +15,8 @@
 <div class="parallax"></div>
 
 <div class="content">
-  <h1>Bushfires in Australia (2009)</h1>
-  <p>Visualizing fire occurrences based on brightness and confidence</p>
+  <h1>Inferno of Black Saturday: Victoria's Devastating Bushfires</h1>
+  <p>A Visual Chronicle of the Catastrophic Fires that Shaped Australia in 2009</p>
   <div id="map"></div>
   <h2>Informative Points</h2>
   <ul>
@@ -24,13 +24,19 @@
     <li>Placeholder text for informative point 2.</li>
     <li>Placeholder text for informative point 3.</li>
   </ul>
+  <div id="economic-activity"></div> <!-- New div for the economic activity chart -->
 </div>
 
 <div class="parallax"></div>
 
 <script type="text/javascript">
-  var spec = "js/map.vg.json";
-  vegaEmbed('#map', spec).then(function(result) {
+  var mapSpec = "js/map.vg.json";
+  vegaEmbed('#map', mapSpec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var economicActivitySpec = "js/economic_activity.vg.json";
+  vegaEmbed('#economic-activity', economicActivitySpec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>

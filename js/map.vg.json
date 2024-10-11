@@ -5,6 +5,7 @@
   "title": {
     "text": "Bushfires in Australia (2009)",
     "subtitle": "Visualizing fire occurrences based on brightness and confidence",
+    "anchor": "middle",
     "fontSize": 16
   },
   "projection": {
