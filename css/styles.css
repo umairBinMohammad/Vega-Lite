@@ -59,3 +59,18 @@ ul li {
     max-width: 800px;
     height: 600px;
 }
+
+.metadata {
+    font-size: 8px; /* Smaller font size for metadata */
+    color: #666; /* Lighter color for subtlety */
+    text-align: left; /* Align text to the left */
+    margin: 20px auto; /* Add some margin for spacing */
+    max-width: 800px; /* Match the width of the content */
+    padding: 10px; /* Add padding for better spacing */
+    border-top: 1px solid #ccc; /* Optional: Add a subtle border for separation */
+}
+
+.metadata h2 {
+    font-size: 18px; /* Slightly larger for headings but still smaller than main headings */
+    color: #444; /* Darker color for headings */
+}
