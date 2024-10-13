@@ -44,14 +44,27 @@
             "size": {
               "field": "brightness",
               "type": "quantitative",
-              "title": "Brightness",
-              "scale": {"type": "log", "range": [10, 100]}
+              "title": "Brightness Level (Log Scale)",
+              "scale": {"type": "log", "range": [10, 100]},
+              "legend": {
+                "title": "Fire Brightness",
+                "format": ".0f",
+                "symbolSize": 100,
+                "titleFontSize": 12,
+                "labelFontSize": 10
+              }
             },
             "color": {
               "field": "confidence",
               "type": "quantitative",
-              "title": "Confidence",
-              "scale": {"scheme": "greens"}
+              "title": "Confidence (%)",
+              "scale": {"scheme": "greens"},
+              "legend": {
+                "title": "Detection Confidence",
+                "format": ".0f",
+                "titleFontSize": 12,
+                "labelFontSize": 10
+              }
             },
             "tooltip": [
               {"field": "brightness", "type": "quantitative", "title": "Brightness"},
@@ -60,13 +73,6 @@
               {"field": "satellite", "type": "nominal", "title": "Satellite"},
               {"field": "instrument", "type": "nominal", "title": "Instrument"}
             ]
-          }
-        },
-        {
-          "mark": {"type": "rule", "color": "black"},
-          "encoding": {
-            "x": {"field": "longitude", "type": "quantitative", "axis": null},
-            "y": {"field": "latitude", "type": "quantitative", "axis": null}
           }
         }
       ]
