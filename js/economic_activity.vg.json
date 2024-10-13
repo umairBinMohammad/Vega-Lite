@@ -12,33 +12,54 @@
     "url": "data/VictorianEconomicActivity.csv",
     "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
   },
-  "mark": {
-    "type": "line",
-    "interpolate": "monotone"
-  },
-  "encoding": {
-    "x": {
-      "field": "Date",
-      "type": "temporal",
-      "title": "Date",
-      "axis": {
-        "tickCount": "year",
-        "labelExpr": "timeFormat(datum.value, '%Y')"
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "monotone",
+        "color": "red"
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "title": "Date",
+          "axis": {
+            "tickCount": "year",
+            "labelExpr": "timeFormat(datum.value, '%Y')"
+          }
+        },
+        "y": {
+          "field": "SFD",
+          "type": "quantitative",
+          "title": "SFD"
+        }
       }
     },
-    "y": {
-      "field": "SFD",
-      "type": "quantitative",
-      "title": "SFD"
-    },
-    "color": {
-      "value": "red"
-    },
-    "tooltip": [
-      {"field": "Date", "type": "temporal", "title": "Date"},
-      {"field": "SFD", "type": "quantitative", "title": "SFD"}
-    ]
-  },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "red",
+        "size": 50,
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "SFD",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "Date", "type": "temporal", "title": "Date"},
+          {"field": "SFD", "type": "quantitative", "title": "SFD"}
+        ]
+      }
+    }
+  ],
   "selection": {
     "brush": {
       "type": "interval",
