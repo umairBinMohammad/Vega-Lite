@@ -42,12 +42,12 @@
 
 <script type="text/javascript">
   var mapSpec = "js/map.vg.json";
-  vegaEmbed('#map', mapSpec).then(function(result) {
+  vegaEmbed('#map', mapSpec, { actions: false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
   var economicActivitySpec = "js/economic_activity.vg.json";
-  vegaEmbed('#economic-activity', economicActivitySpec).then(function(result) {
+  vegaEmbed('#economic-activity', economicActivitySpec, { actions: false }).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
