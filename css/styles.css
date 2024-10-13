@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
     margin: 0;
-    padding: 20px; /* Add padding to create space around the content */
+    padding: 20px;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa); /* Light-colored gradient */
+    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
 }
 
 .parallax {
@@ -16,26 +16,29 @@ body {
 
 .content {
     text-align: center;
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
     background: white;
-    max-width: 800px; /* Limit the width of the content */
-    margin: 0 auto; /* Center the content */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better separation */
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 36px;
+    font-family: 'Lora', serif; /* A serif font for titles adds gravity */
+    font-size: 40px;
     color: #333;
 }
 
 h2 {
-    font-size: 24px;
-    color: #666;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px; /* Increase for better readability */
+    color: #555; 
 }
 
 p {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    color: #777;
+    color: #444; /* Slightly darker for readability */
 }
 
 ul {
@@ -44,6 +47,7 @@ ul {
 }
 
 ul li {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #555;
     margin: 10px 0;
@@ -51,7 +55,7 @@ ul li {
 
 #map {
     margin: 20px auto;
-    width: 100%; /* Make the map responsive */
-    max-width: 800px; /* Limit the width of the map */
+    width: 100%;
+    max-width: 800px;
     height: 600px;
 }
